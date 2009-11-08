@@ -52,7 +52,7 @@
 	
 	//----------------
 	// Create the zip task
-	NSTask * backupTask = [[NSTask alloc] init];
+	NSTask *backupTask = [[NSTask alloc] init];
 	[backupTask setLaunchPath:@"/usr/bin/ditto"];
 	[backupTask setArguments:
 	 [NSArray arrayWithObjects:@"-c", @"-k", @"-X", @"--rsrc", 
