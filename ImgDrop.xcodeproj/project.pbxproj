@@ -13,8 +13,8 @@
 		039DEEAE1013AD8100C9539F /* ImgDropAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 039DEEAD1013AD8100C9539F /* ImgDropAppDelegate.m */; };
 		039DF15010148B2400C9539F /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 039DF14F10148B2400C9539F /* icon.icns */; };
 		03A645021014D52C00730E45 /* LocalhostrClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A645011014D52C00730E45 /* LocalhostrClient.m */; };
-		03A645281014D71000730E45 /* UploadClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A645271014D71000730E45 /* UploadClient.m */; };
-		03A6456F1014D8A500730E45 /* KttnsClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A6456E1014D8A500730E45 /* KttnsClient.m */; };
+		03A645281014D71000730E45 /* VZUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A645271014D71000730E45 /* VZUpload.m */; };
+		03A6456F1014D8A500730E45 /* VZKttnsUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A6456E1014D8A500730E45 /* VZKttnsUpload.m */; };
 		03A646001014E3B000730E45 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A645FF1014E3B000730E45 /* PreferencesWindow.xib */; };
 		03A646041014E43C00730E45 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A646031014E43C00730E45 /* PreferencesWindowController.m */; };
 		03A646D11014EEF500730E45 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 03A646D01014EEF500730E45 /* Credits.rtf */; };
@@ -39,10 +39,10 @@
 		039DF14F10148B2400C9539F /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		03A645001014D52C00730E45 /* LocalhostrClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalhostrClient.h; sourceTree = "<group>"; };
 		03A645011014D52C00730E45 /* LocalhostrClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalhostrClient.m; sourceTree = "<group>"; };
-		03A645261014D71000730E45 /* UploadClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadClient.h; sourceTree = "<group>"; };
-		03A645271014D71000730E45 /* UploadClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadClient.m; sourceTree = "<group>"; };
-		03A6456D1014D8A500730E45 /* KttnsClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KttnsClient.h; sourceTree = "<group>"; };
-		03A6456E1014D8A500730E45 /* KttnsClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KttnsClient.m; sourceTree = "<group>"; };
+		03A645261014D71000730E45 /* VZUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZUpload.h; sourceTree = "<group>"; };
+		03A645271014D71000730E45 /* VZUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZUpload.m; sourceTree = "<group>"; };
+		03A6456D1014D8A500730E45 /* VZKttnsUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZKttnsUpload.h; sourceTree = "<group>"; };
+		03A6456E1014D8A500730E45 /* VZKttnsUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZKttnsUpload.m; sourceTree = "<group>"; };
 		03A645FF1014E3B000730E45 /* PreferencesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 		03A646021014E43C00730E45 /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
 		03A646031014E43C00730E45 /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
@@ -86,10 +86,10 @@
 			children = (
 				03A645001014D52C00730E45 /* LocalhostrClient.h */,
 				03A645011014D52C00730E45 /* LocalhostrClient.m */,
-				03A645261014D71000730E45 /* UploadClient.h */,
-				03A645271014D71000730E45 /* UploadClient.m */,
-				03A6456D1014D8A500730E45 /* KttnsClient.h */,
-				03A6456E1014D8A500730E45 /* KttnsClient.m */,
+				03A645261014D71000730E45 /* VZUpload.h */,
+				03A645271014D71000730E45 /* VZUpload.m */,
+				03A6456D1014D8A500730E45 /* VZKttnsUpload.h */,
+				03A6456E1014D8A500730E45 /* VZKttnsUpload.m */,
 			);
 			name = Hosts;
 			sourceTree = "<group>";
@@ -248,8 +248,8 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				039DEEAE1013AD8100C9539F /* ImgDropAppDelegate.m in Sources */,
 				03A645021014D52C00730E45 /* LocalhostrClient.m in Sources */,
-				03A645281014D71000730E45 /* UploadClient.m in Sources */,
-				03A6456F1014D8A500730E45 /* KttnsClient.m in Sources */,
+				03A645281014D71000730E45 /* VZUpload.m in Sources */,
+				03A6456F1014D8A500730E45 /* VZKttnsUpload.m in Sources */,
 				03A646041014E43C00730E45 /* PreferencesWindowController.m in Sources */,
 				03FAC3CB105144D2007D439E /* NSData+zlib.m in Sources */,
 				0395087A10515035006B9D90 /* UploadSummaryWindowController.m in Sources */,
@@ -314,7 +314,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_ENABLE_OBJC_GC = required;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

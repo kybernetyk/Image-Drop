@@ -8,13 +8,20 @@
 
 #import "ImgDropAppDelegate.h"
 #import "LocalhostrClient.h"
-#import "KttnsClient.h"
-#import "UploadClient.h"
+#import "VZKttnsUpload.h"
+#import "VZUpload.h"
 #import "NSData+zlib.h"
 #import "UploadSummaryWindowController.h"
 
 @implementation ImgDropAppDelegate
 
+/**
+ takes an NSData and creates a zip file from it.
+ filename is the file's name within the created zip.
+ 
+ the zip itself will have a random filename
+ 
+*/
 -(NSData*)zip:(NSData *) data withFilename: (NSString *) filename //raw must be NSData or NSFileWrapper
 {
 	NSString* scratchFolder =  @"/tmp/";//[NSHomeDirectory() stringByAppendingPathComponent: @"Desktop/"];
@@ -66,17 +73,15 @@
 	if ([backupTask terminationStatus] != 0)
 	{
 		NSLog(@"Sorry, didn't work.");
+		[backupTask release];
 		return nil;
 	}
 	
-	// You *did* remember to wash behind your ears ...
-	// ... right?
 	[backupTask release];
 	
 	
 	NSData* convertedData = [[[NSData alloc] initWithContentsOfFile:targetPath] autorelease];
 	
-	//delete scratch
 	
 	[[NSWorkspace sharedWorkspace] performFileOperation:NSWorkspaceDestroyOperation
 												 source:scratchFolder
@@ -162,8 +167,6 @@
 		NSLog(@"dropped public.file-url: %@",filename);
 
 		NSURL *url = [NSURL URLWithString: filename];  //[NSURL URLFromPasteboard: pboard];
-		
-		NSLog(@"laaal: %i",[url retainCount]);
 		data = [NSData dataWithContentsOfURL: url];
 		
 
@@ -204,7 +207,7 @@
 		if (fileMustBeZipped)
 		{
 			data = [self zip: data withFilename: [fname stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
-			//[data gzipDeflate];
+			
 			fname = [fname stringByAppendingString:@".zip"];
 			openSummary = YES;
 		}
@@ -223,20 +226,28 @@
 	fname = [fname stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
 	NSLog(@"uploading %@",fname);
 	
-	if ([self uploadData: data withFilename: fname])
+	VZUpload *upload = [self newUploadInstance];
+	//[upload retain];
+	
+	if (upload)
 	{
-		NSMutableDictionary *uploadInfo = [NSMutableDictionary dictionary];
+		[upload setDelegate: self];
 		
+		NSLog(@"upload: %@",upload);
+	
+		NSMutableDictionary *uploadInfo = [NSMutableDictionary dictionary];
 		[uploadInfo setValue:[NSNumber numberWithBool: openSummary] forKey:@"shouldOpenSummaryWindow"];
 		[uploadInfo setValue:[NSNumber numberWithBool: !openSummary] forKey:@"shouldOpenUploadedFileInBrowser"];
 		
-		[uploadTrackingDictionary setObject:uploadInfo forKey: fname];
+		[upload setUploadMetaInformation: uploadInfo];
+		[upload setFilename: fname];
+		[upload setData: data];
+		
+		
+	//	[upload performUploadWithData: data andFilename: fname];
+		[upload performUpload];
 	}
-
-	//[data release];
-	NSLog(@"retaincount: %i",[data length]);
-	
-
+	[NSApp hide: self];
 }
 
 
@@ -245,13 +256,6 @@
 -(void)applicationDidFinishLaunching:(NSNotification *)aNotification 
 {
 	NSLog(@"applicationDidFinishLaunching");
-	
-	//NSData *bla = [NSData dataWithContentsOfFile:@"/bigshit"];
-	
-	
-	if (!uploadTrackingDictionary)
-		uploadTrackingDictionary = [[NSMutableDictionary alloc] init];
-	
 	
 	[NSApp setServicesProvider:self];
 
@@ -267,7 +271,7 @@
 	
 }
 
-- (BOOL) uploadData: (NSData *)data withFilename: (NSString *) filename
+/*- (BOOL) uploadData: (NSData *)data withFilename: (NSString *) filename
 {
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	
@@ -275,19 +279,39 @@
 	NSString *username = [userDefaults stringForKey:@"username"];
 	NSString *password = [userDefaults stringForKey:@"password"];
 
-	UploadClient *upc = nil;
+	VZUpload *upc = nil;
 	
 	if ([service isEqualToString:@"Localhostr"])
 		upc = [[LocalhostrClient alloc] init];
-	
-	if ([service isEqualToString:@"Kttns"])
-		upc = [[KttnsClient alloc] initWithUsername: username Password: password Salt: @"b8bb08c8b863465fcbbd74c15a08abcf"];
+	else if ([service isEqualToString:@"Kttns"])
+		upc = [[VZKttnsUpload alloc] initWithUsername: username Password: password Salt: @"b8bb08c8b863465fcbbd74c15a08abcf"];
 	
 	[upc setDelegate: self];
 	[upc performUploadWithData: data andFilename: filename];
 	
 	[NSApp hide: self];
 	return YES;
+}*/
+
+/*
+ returns an VZUpload subclass
+*/
+- (VZUpload *) newUploadInstance
+{
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	
+	NSString *service = [userDefaults stringForKey:@"service"];
+	NSString *username = [userDefaults stringForKey:@"username"];
+	NSString *password = [userDefaults stringForKey:@"password"];
+
+	VZUpload *upc = nil;
+	
+	if ([service isEqualToString:@"Localhostr"])
+		upc = [[LocalhostrClient alloc] init];
+	else if ([service isEqualToString:@"Kttns"])
+		upc = [[VZKttnsUpload alloc] initWithUsername: username Password: password Salt: @"b8bb08c8b863465fcbbd74c15a08abcf"];
+	
+	return [upc autorelease];
 }
 
 /*
@@ -315,23 +339,26 @@
  
 - (void) uploadClient: (id) aClient fileUploadSuccess: (BOOL) succeeded withReturnedURL: (NSString *) url
 {
-	NSMutableDictionary *uploadInfo = [uploadTrackingDictionary objectForKey: [aClient fileToUpload]];
+	NSDictionary *uploadInfo = [aClient uploadMetaInformation];
 	
 	//open summary window
 	if ([[uploadInfo valueForKey: @"shouldOpenSummaryWindow"] boolValue])
 	{
-		NSLog(@"the file %@ was uploaded to the url %@",[aClient fileToUpload],url);
+		NSLog(@"the file %@ was uploaded to the url %@",[aClient filename],url);
 		[NSApp activateIgnoringOtherApps: YES];
-	 	UploadSummaryWindowController *uswc = [[UploadSummaryWindowController alloc] initWithWindowNibName:@"UploadSummaryWindow"];
 		
+	 	UploadSummaryWindowController *uswc = [[UploadSummaryWindowController alloc] initWithWindowNibName:@"UploadSummaryWindow"];
+		//the UploadSummaryWindowController will autorelease itself when its window is closed
+		//ignore the clang analyzer's bitching about this line.
+		//don't believe? look into UploadSummaryWindowController.m in - (void)windowWillClose:(NSNotification *)notification
 		
 		
 		[[uswc window] center];
 		[[uswc window] makeKeyAndOrderFront: self];
 		[uswc showWindow: self];
 		
-		[[uswc summaryLabel] setStringValue: [NSString stringWithFormat:@"File %@ was uploaded to:",[aClient fileToUpload]]];
-		[[uswc window] setTitle: [aClient fileToUpload]];
+		[[uswc summaryLabel] setStringValue: [NSString stringWithFormat:@"File %@ was uploaded to:",[aClient filename]]];
+		[[uswc window] setTitle: [aClient filename]];
 		[[uswc summaryTextField] setStringValue: url];
 		[[uswc summaryTextField] selectText: self];
 	}
@@ -345,9 +372,7 @@
 	}
 
 
-	
-	[uploadTrackingDictionary removeObjectForKey: [aClient fileToUpload]];
-	[aClient release];
-	
+	//[aClient autorelease];
+
 }
 @end

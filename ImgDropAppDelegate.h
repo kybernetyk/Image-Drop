@@ -7,17 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "VZUpload.h"
 #import "PreferencesWindowController.h"
 
 @interface ImgDropAppDelegate : NSObject 
 {
 	PreferencesWindowController *preferencesWindowController;
-	
-	NSMutableDictionary *uploadTrackingDictionary;
 }
 
-//- (BOOL) uploadData: (NSData *)data withFilename: (NSString *) filename;
-- (BOOL) uploadData: (NSData *)data withFilename: (NSString *) filename;
-
+- (VZUpload *) newUploadInstance;
 - (IBAction) openPreferences: (id) sender;
 @end

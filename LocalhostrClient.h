@@ -7,9 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "UploadClient.h"
+#import "VZUpload.h"
 
-@interface LocalhostrClient : UploadClient
+@interface LocalhostrClient : VZUpload
 {
 }
 

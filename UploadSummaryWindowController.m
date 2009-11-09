@@ -13,6 +13,21 @@
 @synthesize summaryLabel;
 @synthesize summaryTextField;
 
+- (void)windowWillClose:(NSNotification *)notification
+{
+	//message our delegate that we're done
+	//or maybe dont
+	
+	//autorelease the controller as we are not keeping any reference to it in the app's main window
+	[self autorelease];
+}
+
+- (void) dealloc
+{
+	NSLog(@"uload summary controller deallocing");
+	[super dealloc];
+}
+
 - (IBAction) copyTextFieldToPasteboard: (id) sender
 {
 //	NSPasteboardItem *item = [[NSPasteboardItem alloc] init];

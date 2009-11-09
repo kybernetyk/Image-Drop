@@ -6,15 +6,29 @@
 //  Copyright 2009 flux forge. All rights reserved.
 //
 
-#import "UploadClient.h"
+#import "VZUpload.h"
 
 
-@implementation UploadClient
+@implementation VZUpload
+@synthesize data;
+@synthesize filename;
 @synthesize delegate;
-@synthesize fileToUpload;
 @synthesize urlOfUploadHost;
+@synthesize uploadMetaInformation;
 
 #pragma mark returnvalue
+
+- (void) dealloc
+{
+	NSLog(@"VZ UPLOAD DEALLOC!");
+	
+	[data release];
+	[filename release];
+	[urlOfUploadHost release];
+	[uploadMetaInformation release];
+	
+	[super dealloc];
+}
 
 - (void) processReturnValue: (NSString *) returnValue
 {
@@ -29,14 +43,16 @@
 }
 
 #pragma mark HTTP REQ BUILDING
-- (void) performUploadWithData: (NSData *) data andFilename: (NSString *) filename
+//- (void) performUploadWithData: (NSData *) data andFilename: (NSString *) filename
+- (void) performUpload
 {
 	NSLog(@"LOL THIS IS ABSTRACT!");
 	[self doesNotRecognizeSelector:_cmd];
 	
 }
 
-- (NSMutableURLRequest *) buildUploadRequestWithURL: (NSString *) url Data: (NSData *) data andFilename: (NSString *) filename
+//- (NSURLRequest *) buildUploadRequestWithURL: (NSString *) url Data: (NSData *) data andFilename: (NSString *) filename
+- (NSURLRequest *) buildUploadRequest
 {
 	NSLog(@"LOL THIS IS ABSTRACT!");
 	[self doesNotRecognizeSelector:_cmd];
@@ -65,8 +81,8 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection // IN
 {
 	//LOG(6, ("%s: self:0x%p\n", __func__, self));
-	[connection release];
-//	NSLog(@"%i",[connection retainCount]);
+	//[connection release];
+	NSLog(@"%i",[connection retainCount]);
 	
 	//[self uploadSucceeded:uploadDidSucceed];
 	
@@ -94,7 +110,8 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error              // IN
 {
 	//NSLog(1, ("%s: self:0x%p, connection error:%s\n",	__func__, self, [[error description] UTF8String]));
-	[connection release];
+	//[connection release];
+	NSLog(@"%i",[connection retainCount]);
 	NSLog(@"connection failed %@",[error description]);
 }
 

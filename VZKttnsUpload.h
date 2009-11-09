@@ -7,9 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "UploadClient.h"
+#import "VZUpload.h"
 
-@interface KttnsClient : UploadClient 
+@interface VZKttnsUpload : VZUpload 
 {
 	NSString *username;
 	NSString *password;
