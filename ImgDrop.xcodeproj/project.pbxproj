@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		034273CA10AF422F006E9FCD /* VZImageShackUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 034273C910AF422F006E9FCD /* VZImageShackUpload.m */; };
 		0395087A10515035006B9D90 /* UploadSummaryWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395087910515035006B9D90 /* UploadSummaryWindowController.m */; };
 		0395087C10515048006B9D90 /* UploadSummaryWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0395087B10515048006B9D90 /* UploadSummaryWindow.xib */; };
 		039509A710515873006B9D90 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039509A610515873006B9D90 /* CoreFoundation.framework */; };
@@ -30,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		034273C810AF422F006E9FCD /* VZImageShackUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZImageShackUpload.h; sourceTree = "<group>"; };
+		034273C910AF422F006E9FCD /* VZImageShackUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZImageShackUpload.m; sourceTree = "<group>"; };
 		0395087810515035006B9D90 /* UploadSummaryWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadSummaryWindowController.h; sourceTree = "<group>"; };
 		0395087910515035006B9D90 /* UploadSummaryWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadSummaryWindowController.m; sourceTree = "<group>"; };
 		0395087B10515048006B9D90 /* UploadSummaryWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadSummaryWindow.xib; sourceTree = "<group>"; };
@@ -90,6 +93,8 @@
 				03A645271014D71000730E45 /* VZUpload.m */,
 				03A6456D1014D8A500730E45 /* VZKttnsUpload.h */,
 				03A6456E1014D8A500730E45 /* VZKttnsUpload.m */,
+				034273C810AF422F006E9FCD /* VZImageShackUpload.h */,
+				034273C910AF422F006E9FCD /* VZImageShackUpload.m */,
 			);
 			name = Hosts;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 				03A646041014E43C00730E45 /* PreferencesWindowController.m in Sources */,
 				03FAC3CB105144D2007D439E /* NSData+zlib.m in Sources */,
 				0395087A10515035006B9D90 /* UploadSummaryWindowController.m in Sources */,
+				034273CA10AF422F006E9FCD /* VZImageShackUpload.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +337,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_ENABLE_OBJC_GC = required;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;

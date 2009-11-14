@@ -9,6 +9,9 @@
 #import <Cocoa/Cocoa.h>
 
 
+/**
+ @brief our abstract class for the different hosters.
+ */
 @interface VZUpload : NSObject 
 {
 	id delegate;
@@ -22,12 +25,28 @@
 }
 
 @property (readwrite, assign) id delegate;
+
+/**
+ @brief here you can store all meta information you want to pass later to the delegate.
+ @discussion currently supported keys:
+ BOOL shouldOpenSummaryWindow: tells the delegate if it should open a summary window when the upload is finished.
+ BOOL shouldOpenUploadedFileInBrowser: tells the delegate if it should open a safari instance and point it to the uploaded file
+ */
 @property (readwrite, copy) NSDictionary *uploadMetaInformation;
 
+/**
+ @brief the image data. (or any other file ... not all hosters will support anything other than images.)
+ */
 @property (readwrite, copy) NSData *data;
+
+/**
+ @brief the file name of the file. many hosters will name the uploaded file after this property
+ */
 @property (readwrite, copy) NSString *filename;
 
-
+/**
+ @brief after setting up all options you should call this to begin the upload.
+ */
 - (void) performUpload;
 @end
 

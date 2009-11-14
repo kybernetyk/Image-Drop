@@ -12,6 +12,7 @@
 #import "VZUpload.h"
 #import "NSData+zlib.h"
 #import "UploadSummaryWindowController.h"
+#import "VZImageShackUpload.h"
 
 @implementation ImgDropAppDelegate
 
@@ -101,7 +102,7 @@
 	
 	NSPasteboardItem *item = [[pboard pasteboardItems] objectAtIndex: 0];
 	NSString *type = [[item types] objectAtIndex: 0];
-	NSData *data = [item dataForType: type];
+	NSData *data = [NSData dataWithData: [item dataForType: type]];
 	NSString *fname = @"a_picture.png";
 	BOOL openSummary = NO;
 	
@@ -227,13 +228,14 @@
 	NSLog(@"uploading %@",fname);
 	
 	VZUpload *upload = [self newUploadInstance];
+	[upload autorelease];
 	//[upload retain];
 	
 	if (upload)
 	{
 		[upload setDelegate: self];
 		
-		NSLog(@"upload: %@",upload);
+		//NSLog(@"upload: %@",upload);
 	
 		NSMutableDictionary *uploadInfo = [NSMutableDictionary dictionary];
 		[uploadInfo setValue:[NSNumber numberWithBool: openSummary] forKey:@"shouldOpenSummaryWindow"];
@@ -310,8 +312,10 @@
 		upc = [[LocalhostrClient alloc] init];
 	else if ([service isEqualToString:@"Kttns"])
 		upc = [[VZKttnsUpload alloc] initWithUsername: username Password: password Salt: @"b8bb08c8b863465fcbbd74c15a08abcf"];
+	else if ([service isEqualToString:@"imgShack"])
+		upc = [[VZImageShackUpload alloc] init];
 	
-	return [upc autorelease];
+	return upc;
 }
 
 /*

@@ -82,7 +82,7 @@
 {
 	//LOG(6, ("%s: self:0x%p\n", __func__, self));
 	//[connection release];
-	NSLog(@"%i",[connection retainCount]);
+//	NSLog(@"%i",[connection retainCount]);
 	
 	//[self uploadSucceeded:uploadDidSucceed];
 	
@@ -161,7 +161,7 @@
 {
 	//LOG(10, ("%s: self:0x%p\n", __func__, self));
 	
-	NSString *reply = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]  autorelease];
+	NSString *reply = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	//	LOG(10, ("%s: data: %s\n", __func__, [reply UTF8String]));
 	
 	/*if ([reply hasPrefix:@"YES"]) 
@@ -169,9 +169,11 @@
 	 uploadDidSucceed = YES;
 	 }*/
 	
-	NSLog(@"received data: %@",reply);
+//	NSLog(@"received data: %@",reply);
 	
 	[self processReturnValue: reply];
+	
+	[reply release];
 	
 	//NSArray *rets = [reply componentsSeparatedByString:@","];
 	
