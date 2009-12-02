@@ -94,13 +94,12 @@
 									<bool key="EncodedWithXMLCoder">YES</bool>
 									<string>Kttns</string>
 									<string>imgShack</string>
-									<string>Localhostr</string>
 								</object>
 								<reference key="NSDelegate" ref="403728926"/>
 								<object class="NSComboTableView" key="NSTableView" id="916134558">
 									<reference key="NSNextResponder"/>
 									<int key="NSvFlags">274</int>
-									<string key="NSFrameSize">{13, 42}</string>
+									<string key="NSFrameSize">{13, 63}</string>
 									<reference key="NSSuperview"/>
 									<reference key="NSWindow"/>
 									<bool key="NSEnabled">YES</bool>
