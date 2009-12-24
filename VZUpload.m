@@ -156,6 +156,10 @@
  *
  *-----------------------------------------------------------------------------
  */
+- (BOOL) shouldHide
+{
+ 	return YES;
+}
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data                // IN
 {

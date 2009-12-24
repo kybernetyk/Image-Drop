@@ -13,6 +13,7 @@
 #import "NSData+zlib.h"
 #import "UploadSummaryWindowController.h"
 #import "VZImageShackUpload.h"
+#import "VZTwittPicUpload.h"
 
 @implementation ImgDropAppDelegate
 
@@ -97,7 +98,7 @@
 
 -(void)doString:(NSPasteboard *)pboard userData:(NSString *)userData error:(NSString **)error 
 {
-	[NSApp hide: self];
+	//[NSApp hide: self];
 	//NSLog(@"items: %@",[pboard pasteboardItems]);
 	
 	NSPasteboardItem *item = [[pboard pasteboardItems] objectAtIndex: 0];
@@ -233,6 +234,9 @@
 	
 	if (upload)
 	{
+		if ([upload shouldHide])
+			[NSApp hide: self];
+		
 		[upload setDelegate: self];
 		
 		//NSLog(@"upload: %@",upload);
@@ -249,7 +253,12 @@
 	//	[upload performUploadWithData: data andFilename: fname];
 		[upload performUpload];
 	}
-	[NSApp hide: self];
+	else 
+	{
+		[NSApp hide: self];
+	}
+
+	
 }
 
 
@@ -314,6 +323,8 @@
 		upc = [[VZKttnsUpload alloc] initWithUsername: username Password: password Salt: @"b8bb08c8b863465fcbbd74c15a08abcf"];
 	else if ([service isEqualToString:@"imgShack"])
 		upc = [[VZImageShackUpload alloc] init];
+	else if ([service isEqualToString:@"Twitt Pic"])
+		upc = [[VZTwittPicUpload alloc] initWithUsername: username Password: password];
 	
 	return upc;
 }

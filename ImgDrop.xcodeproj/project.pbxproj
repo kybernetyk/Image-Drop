@@ -11,6 +11,9 @@
 		0395087A10515035006B9D90 /* UploadSummaryWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395087910515035006B9D90 /* UploadSummaryWindowController.m */; };
 		0395087C10515048006B9D90 /* UploadSummaryWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0395087B10515048006B9D90 /* UploadSummaryWindow.xib */; };
 		039509A710515873006B9D90 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039509A610515873006B9D90 /* CoreFoundation.framework */; };
+		039C69E110E38CEA0052B7E9 /* VZTwittPicUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 039C69E010E38CEA0052B7E9 /* VZTwittPicUpload.m */; };
+		039C6A0E10E390980052B7E9 /* TwittPicMessageWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 039C6A0D10E390980052B7E9 /* TwittPicMessageWindow.xib */; };
+		039C6A1210E391460052B7E9 /* TwittPicMessageWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039C6A1110E391460052B7E9 /* TwittPicMessageWindowController.m */; };
 		039DEEAE1013AD8100C9539F /* ImgDropAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 039DEEAD1013AD8100C9539F /* ImgDropAppDelegate.m */; };
 		039DF15010148B2400C9539F /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 039DF14F10148B2400C9539F /* icon.icns */; };
 		03A645021014D52C00730E45 /* LocalhostrClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A645011014D52C00730E45 /* LocalhostrClient.m */; };
@@ -37,6 +40,11 @@
 		0395087910515035006B9D90 /* UploadSummaryWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadSummaryWindowController.m; sourceTree = "<group>"; };
 		0395087B10515048006B9D90 /* UploadSummaryWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadSummaryWindow.xib; sourceTree = "<group>"; };
 		039509A610515873006B9D90 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		039C69DF10E38CEA0052B7E9 /* VZTwittPicUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTwittPicUpload.h; sourceTree = "<group>"; };
+		039C69E010E38CEA0052B7E9 /* VZTwittPicUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTwittPicUpload.m; sourceTree = "<group>"; };
+		039C6A0D10E390980052B7E9 /* TwittPicMessageWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwittPicMessageWindow.xib; sourceTree = "<group>"; };
+		039C6A1010E391460052B7E9 /* TwittPicMessageWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwittPicMessageWindowController.h; sourceTree = "<group>"; };
+		039C6A1110E391460052B7E9 /* TwittPicMessageWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwittPicMessageWindowController.m; sourceTree = "<group>"; };
 		039DEEAC1013AD8100C9539F /* ImgDropAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImgDropAppDelegate.h; sourceTree = "<group>"; };
 		039DEEAD1013AD8100C9539F /* ImgDropAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImgDropAppDelegate.m; sourceTree = "<group>"; };
 		039DF14F10148B2400C9539F /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
@@ -95,6 +103,8 @@
 				03A6456E1014D8A500730E45 /* VZKttnsUpload.m */,
 				034273C810AF422F006E9FCD /* VZImageShackUpload.h */,
 				034273C910AF422F006E9FCD /* VZImageShackUpload.m */,
+				039C69DF10E38CEA0052B7E9 /* VZTwittPicUpload.h */,
+				039C69E010E38CEA0052B7E9 /* VZTwittPicUpload.m */,
 			);
 			name = Hosts;
 			sourceTree = "<group>";
@@ -109,6 +119,8 @@
 				03A646031014E43C00730E45 /* PreferencesWindowController.m */,
 				0395087810515035006B9D90 /* UploadSummaryWindowController.h */,
 				0395087910515035006B9D90 /* UploadSummaryWindowController.m */,
+				039C6A1010E391460052B7E9 /* TwittPicMessageWindowController.h */,
+				039C6A1110E391460052B7E9 /* TwittPicMessageWindowController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -177,6 +189,7 @@
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 				03A645FF1014E3B000730E45 /* PreferencesWindow.xib */,
 				0395087B10515048006B9D90 /* UploadSummaryWindow.xib */,
+				039C6A0D10E390980052B7E9 /* TwittPicMessageWindow.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -240,6 +253,7 @@
 				03A646D11014EEF500730E45 /* Credits.rtf in Resources */,
 				0395087C10515048006B9D90 /* UploadSummaryWindow.xib in Resources */,
 				03B684C510A7900000681093 /* newicon.icns in Resources */,
+				039C6A0E10E390980052B7E9 /* TwittPicMessageWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +273,8 @@
 				03FAC3CB105144D2007D439E /* NSData+zlib.m in Sources */,
 				0395087A10515035006B9D90 /* UploadSummaryWindowController.m in Sources */,
 				034273CA10AF422F006E9FCD /* VZImageShackUpload.m in Sources */,
+				039C69E110E38CEA0052B7E9 /* VZTwittPicUpload.m in Sources */,
+				039C6A1210E391460052B7E9 /* TwittPicMessageWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

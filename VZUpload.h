@@ -26,6 +26,8 @@
 
 @property (readwrite, assign) id delegate;
 
+- (BOOL) shouldHide;
+
 /**
  @brief here you can store all meta information you want to pass later to the delegate.
  @discussion currently supported keys:
