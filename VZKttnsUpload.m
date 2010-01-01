@@ -60,12 +60,39 @@ NSString * md5( NSString *str )
 	[super dealloc];
 }
 
-- (void) auth
+- (NSDictionary *) postFields
 {
-//	command = '/usr/bin/curl -d username="' + username + '" -d password="' + password_hashed + '" ' + auth_url;
-//    document.getElementById("status").object.setValue(10);
-    
-//    login = widget.system(command, null).outputString;
+	NSString *rawpass = [NSString stringWithFormat:@"%@%@",salt,password];
+	NSString *hashedpass = md5(rawpass);
+	
+	
+	NSMutableDictionary *postFields = [NSMutableDictionary dictionary];
+	
+	[postFields setObject: [self username] forKey: @"username"];
+	[postFields setObject: hashedpass forKey: @"password"];
+	[postFields setObject: data forKey: @"upload"];
+	
+	return postFields;
+}
+
+- (NSString *) hostUploadURL
+{
+	return @"http://kttns.org";
+}
+
+
+- (void) processReturnValue: (NSString *) returnValue
+{
+	NSLog(@"processing return val: %@",returnValue);
+	
+	[self messageDelegateSuccess: [NSString stringWithFormat:@"http://kttns.org/%@",returnValue]];
+}
+
+
+
+
+/*- (void) auth
+{
 	NSString *rawpass = [NSString stringWithFormat:@"%@%@",salt,password];
 	NSString *hashedpass = md5(rawpass);
 
@@ -104,34 +131,29 @@ NSString * md5( NSString *str )
 	[str release];
 	
 }
-
-- (void) performUpload
+*/
+/*- (void) performUpload
 {
 	if (!data || !filename)
 	{
 		NSLog(@"error: data or filename not set! data: %@ filename: %@",data,filename);
+		[self messageDelegateFailure];
 		return;
 	}
 	
 	NSLog(@"perofming upload with data length %i",[data length]);
 	[self auth];
-	
 	[self setUrlOfUploadHost: @"http://kttns.org"];
 
 	NSURLRequest *req = [self buildUploadRequest];
 	
 	[[[NSURLConnection alloc] initWithRequest:req delegate:self] autorelease];
-}
+}*/
 
 
-- (void) processReturnValue: (NSString *) returnValue
-{
-	NSLog(@"processing return val: %@",returnValue);
-	
-	[self messageDelegateSuccess: [NSString stringWithFormat:@"http://kttns.org/%@",returnValue]];
-}
 
 
+/*
 
 - (NSURLRequest *) buildUploadRequest
 {
@@ -172,6 +194,6 @@ NSString * md5( NSString *str )
 	[postBody release];
 	
 	return req;
-}
+}*/
 
 @end

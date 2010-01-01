@@ -26,7 +26,7 @@
 
 @property (readwrite, assign) id delegate;
 
-- (BOOL) shouldHide;
+
 
 /**
  @brief here you can store all meta information you want to pass later to the delegate.
@@ -50,6 +50,34 @@
  @brief after setting up all options you should call this to begin the upload.
  */
 - (void) performUpload;
+
+#pragma mark -
+#pragma mark mandatory override
+
+/**
+ @brief our post fields for the particular hoster
+ */
+- (NSDictionary *) postFields;
+
+/**
+ @brief the url of the upload endpoint for our hoster
+ */
+- (NSString *) hostUploadURL;
+
+
+#pragma mark -
+#pragma mark optional override
+/**
+ @brief perform auth with our hoster
+ */
+- (void) auth;
+
+/**
+ @brief should the app hide after something was dropped on the dock item?
+ */
+- (BOOL) shouldApplicationHideOnDroppingImage;
+
+
 @end
 
 #pragma mark -
@@ -57,6 +85,27 @@
 @interface VZUpload (private)
 @property (readwrite, copy) NSString *urlOfUploadHost;
 
-- (NSURLRequest *) buildUploadRequest;
+- (NSURLRequest *) buildUploadRequestWithPostFields: (NSDictionary *) postFields;
+
 - (void) messageDelegateSuccess: (NSString *) urlOfUploadedPicture;
+- (void) messageDelegateFailure;
+
+/**
+ @brief creates multipart POST fields from a NSDictionary. just append this as the http body to your NSURLRequest
+ @discussion cocoa really needs a modern NSURLConnection. Something with accurate progress reports
+ and a fucking easy to use header/body-managment in NSURLRequest.
+ */
+- (NSData *)dataForPOSTWithDictionary:(NSDictionary *)aDictionary boundary:(NSString *)aBoundary;
+
+
+/**
+ @brief Guesses the content type for multiform post from the filenames path extension
+ @discussion I told you imageShack would suck. And this is one reason: is.us does not support
+ application/octet-stream as content-type. so we have to "guess" the data.
+ yeah, IS could parse the uploaded files themselve but they don't.
+ */
+- (NSString *) guessedContentType;
+
+
+
 @end

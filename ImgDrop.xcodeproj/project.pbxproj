@@ -16,7 +16,6 @@
 		039C6A1210E391460052B7E9 /* TwittPicMessageWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039C6A1110E391460052B7E9 /* TwittPicMessageWindowController.m */; };
 		039DEEAE1013AD8100C9539F /* ImgDropAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 039DEEAD1013AD8100C9539F /* ImgDropAppDelegate.m */; };
 		039DF15010148B2400C9539F /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 039DF14F10148B2400C9539F /* icon.icns */; };
-		03A645021014D52C00730E45 /* LocalhostrClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A645011014D52C00730E45 /* LocalhostrClient.m */; };
 		03A645281014D71000730E45 /* VZUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A645271014D71000730E45 /* VZUpload.m */; };
 		03A6456F1014D8A500730E45 /* VZKttnsUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A6456E1014D8A500730E45 /* VZKttnsUpload.m */; };
 		03A646001014E3B000730E45 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A645FF1014E3B000730E45 /* PreferencesWindow.xib */; };
@@ -48,8 +47,6 @@
 		039DEEAC1013AD8100C9539F /* ImgDropAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImgDropAppDelegate.h; sourceTree = "<group>"; };
 		039DEEAD1013AD8100C9539F /* ImgDropAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImgDropAppDelegate.m; sourceTree = "<group>"; };
 		039DF14F10148B2400C9539F /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
-		03A645001014D52C00730E45 /* LocalhostrClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalhostrClient.h; sourceTree = "<group>"; };
-		03A645011014D52C00730E45 /* LocalhostrClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalhostrClient.m; sourceTree = "<group>"; };
 		03A645261014D71000730E45 /* VZUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZUpload.h; sourceTree = "<group>"; };
 		03A645271014D71000730E45 /* VZUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZUpload.m; sourceTree = "<group>"; };
 		03A6456D1014D8A500730E45 /* VZKttnsUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZKttnsUpload.h; sourceTree = "<group>"; };
@@ -95,8 +92,6 @@
 		03A644FF1014D51300730E45 /* Hosts */ = {
 			isa = PBXGroup;
 			children = (
-				03A645001014D52C00730E45 /* LocalhostrClient.h */,
-				03A645011014D52C00730E45 /* LocalhostrClient.m */,
 				03A645261014D71000730E45 /* VZUpload.h */,
 				03A645271014D71000730E45 /* VZUpload.m */,
 				03A6456D1014D8A500730E45 /* VZKttnsUpload.h */,
@@ -266,7 +261,6 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				039DEEAE1013AD8100C9539F /* ImgDropAppDelegate.m in Sources */,
-				03A645021014D52C00730E45 /* LocalhostrClient.m in Sources */,
 				03A645281014D71000730E45 /* VZUpload.m in Sources */,
 				03A6456F1014D8A500730E45 /* VZKttnsUpload.m in Sources */,
 				03A646041014E43C00730E45 /* PreferencesWindowController.m in Sources */,

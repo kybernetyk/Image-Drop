@@ -23,25 +23,3 @@
 }
 @end
 
-
-@interface VZImageShackUpload (private)
-
-/**
- @brief creates multipart POST fields from a NSDictionary. just append this as the http body to your NSURLRequest
- @discussion cocoa really needs a modern NSURLConnection. Something with accurate progress reports
- and a fucking easy to use header/body-managment in NSURLRequest.
-*/
-- (NSData *)dataForPOSTWithDictionary:(NSDictionary *)aDictionary boundary:(NSString *)aBoundary;
-
-
-/**
- @brief Guesses the content type for multiform post from the filenames path extension
- @discussion I told you imageShack would suck. And this is one reason: is.us does not support
- application/octet-stream as content-type. so we have to "guess" the data.
- yeah, IS could parse the uploaded files themselve but they don't.
- */
-- (NSString *) guessedContentType;
-
-
-
-@end

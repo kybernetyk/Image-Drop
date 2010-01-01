@@ -7,7 +7,6 @@
 //
 
 #import "ImgDropAppDelegate.h"
-#import "LocalhostrClient.h"
 #import "VZKttnsUpload.h"
 #import "VZUpload.h"
 #import "NSData+zlib.h"
@@ -229,12 +228,12 @@
 	NSLog(@"uploading %@",fname);
 	
 	VZUpload *upload = [self newUploadInstance];
-	[upload autorelease];
+	//[upload autorelease];
 	//[upload retain];
 	
 	if (upload)
 	{
-		if ([upload shouldHide])
+		if ([upload shouldApplicationHideOnDroppingImage])
 			[NSApp hide: self];
 		
 		[upload setDelegate: self];
@@ -317,9 +316,7 @@
 
 	VZUpload *upc = nil;
 	
-	if ([service isEqualToString:@"Localhostr"])
-		upc = [[LocalhostrClient alloc] init];
-	else if ([service isEqualToString:@"Kttns"])
+	if ([service isEqualToString:@"Kttns"])
 		upc = [[VZKttnsUpload alloc] initWithUsername: username Password: password Salt: @"b8bb08c8b863465fcbbd74c15a08abcf"];
 	else if ([service isEqualToString:@"imgShack"])
 		upc = [[VZImageShackUpload alloc] init];
@@ -351,7 +348,6 @@
 }
 
 #pragma mark Imagehoster Client delegate
- 
 - (void) uploadClient: (id) aClient fileUploadSuccess: (BOOL) succeeded withReturnedURL: (NSString *) url
 {
 	NSDictionary *uploadInfo = [aClient uploadMetaInformation];
@@ -387,7 +383,14 @@
 	}
 
 
-	//[aClient autorelease];
+	[aClient autorelease];
 
 }
+
+- (void) uploadClientfileUploadDidFail: (id) aClient
+{
+	NSLog(@"upload for %@ failed!", [aClient filename]);
+	[aClient autorelease];
+}
+
 @end

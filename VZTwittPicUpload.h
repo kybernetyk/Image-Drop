@@ -38,14 +38,3 @@
 @end
 
 
-@interface VZTwittPicUpload (private)
-
-/**
- @brief creates multipart POST fields from a NSDictionary. just append this as the http body to your NSURLRequest
- @discussion cocoa really needs a modern NSURLConnection. Something with accurate progress reports
- and a fucking easy to use header/body-managment in NSURLRequest.
- */
-- (NSData *)dataForPOSTWithDictionary:(NSDictionary *)aDictionary boundary:(NSString *)aBoundary;
-
-
-@end
