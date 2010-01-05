@@ -65,7 +65,9 @@
 		return;
 	}
 	
-	NSLog(@"perofming upload with data length %i and filename %@",[data length],filename);
+	
+	NSLog(@"perofming upload with data length %i, filename %@ and content-type: %@",[data length],filename, [self guessedContentType]);
+
 
 	//retain ourselfes so we don't get dealloced while the msg input dialog is shown
 	//[self retain];

@@ -298,7 +298,7 @@
 		[self messageDelegateFailure];
 	}
 	
-	NSLog(@"image shack build upload req");
+	NSLog(@"%@ bulding multipart post request ...", [self className]);
 	
 	NSString *boundary = @"----------------------------592d224d1f3a";
 	
@@ -346,7 +346,7 @@
 		return;
 	}
 
-	NSLog(@"perofming upload with data length %i and filename %@",[data length],filename);
+	NSLog(@"%@ perofming upload with data length %i, filename %@ and content-type: %@",[self className],[data length],filename, [self guessedContentType]);
 	
 	//[self setUrlOfUploadHost: @"http://www.imageshack.us/upload_api.php"];
 	

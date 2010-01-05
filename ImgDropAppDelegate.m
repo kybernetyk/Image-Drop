@@ -98,10 +98,14 @@
 -(void)doString:(NSPasteboard *)pboard userData:(NSString *)userData error:(NSString **)error 
 {
 	//[NSApp hide: self];
-	//NSLog(@"items: %@",[pboard pasteboardItems]);
+	
 	
 	NSPasteboardItem *item = [[pboard pasteboardItems] objectAtIndex: 0];
 	NSString *type = [[item types] objectAtIndex: 0];
+	
+	//NSLog(@"items: %@",[pboard pasteboardItems]);
+	//NSLog(@"types: %@", [item types]);
+	
 	NSData *data = [NSData dataWithData: [item dataForType: type]];
 	NSString *fname = @"a_picture.png";
 	BOOL openSummary = NO;
@@ -215,6 +219,15 @@
 	}
 	else if ([type isEqualToString:@"public.tiff"])
 	{
+		NSLog(@"dropped public.tiff type! converting data to png ...");
+		
+		NSImage *img = [[NSImage alloc] initWithData: data];
+		NSBitmapImageRep *rep = [[img representations] objectAtIndex: 0];
+		
+		data = [rep representationUsingType: NSPNGFileType properties: nil];
+		[img autorelease];
+		
+	
 		srand(time(0));
 		fname = [NSString stringWithFormat:@"%x-%x-%x-%x.png",rand()%0xffff,rand()%0xffff,rand()%0xffff,rand()%0xffff];
 		openSummary = NO;
@@ -225,14 +238,12 @@
 		return;
 	
 	fname = [fname stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
-	NSLog(@"uploading %@",fname);
 	
 	VZUpload *upload = [self newUploadInstance];
-	//[upload autorelease];
-	//[upload retain];
-	
 	if (upload)
 	{
+		NSLog(@"uploading %@ with %@",fname, [upload className]);
+		
 		if ([upload shouldApplicationHideOnDroppingImage])
 			[NSApp hide: self];
 		
@@ -271,7 +282,7 @@
 
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys: 
-								 @"Localhostr",@"service",
+								 @"imgShack",@"service",
 								 @"",@"username",
 								 @"", @"password", 
 								 nil]; //esc + space
