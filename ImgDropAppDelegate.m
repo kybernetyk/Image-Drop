@@ -13,6 +13,7 @@
 #import "UploadSummaryWindowController.h"
 #import "VZImageShackUpload.h"
 #import "VZTwittPicUpload.h"
+#import "VZHtlrUpload.h"
 
 @implementation ImgDropAppDelegate
 
@@ -331,6 +332,8 @@
 		upc = [[VZKttnsUpload alloc] initWithUsername: username Password: password Salt: @"b8bb08c8b863465fcbbd74c15a08abcf"];
 	else if ([service isEqualToString:@"imgShack"])
 		upc = [[VZImageShackUpload alloc] init];
+	else if ([service isEqualToString:@"Htlr"])
+		upc = [[VZHtlrUpload alloc] init];
 	else if ([service isEqualToString:@"Twitt Pic"])
 		upc = [[VZTwittPicUpload alloc] initWithUsername: username Password: password];
 	

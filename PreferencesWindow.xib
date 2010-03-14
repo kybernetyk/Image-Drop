@@ -87,7 +87,7 @@
 										<bytes key="NSWhite">MAA</bytes>
 									</object>
 								</object>
-								<int key="NSVisibleItemCount">2</int>
+								<int key="NSVisibleItemCount">5</int>
 								<bool key="NSHasVerticalScroller">YES</bool>
 								<bool key="NSCompletes">YES</bool>
 								<object class="NSMutableArray" key="NSPopUpListData">
@@ -95,12 +95,13 @@
 									<string>Kttns</string>
 									<string>imgShack</string>
 									<string>Twitt Pic</string>
+									<string>Htlr</string>
 								</object>
 								<reference key="NSDelegate" ref="403728926"/>
 								<object class="NSComboTableView" key="NSTableView" id="916134558">
 									<reference key="NSNextResponder"/>
 									<int key="NSvFlags">274</int>
-									<string key="NSFrameSize">{13, 42}</string>
+									<string key="NSFrameSize">{13, 63}</string>
 									<reference key="NSSuperview"/>
 									<reference key="NSWindow"/>
 									<bool key="NSEnabled">YES</bool>

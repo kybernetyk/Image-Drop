@@ -22,6 +22,8 @@
 		03A646041014E43C00730E45 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A646031014E43C00730E45 /* PreferencesWindowController.m */; };
 		03A646D11014EEF500730E45 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 03A646D01014EEF500730E45 /* Credits.rtf */; };
 		03B684C510A7900000681093 /* newicon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 03B684C410A7900000681093 /* newicon.icns */; };
+		03BC1C4A1139789B0024180E /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BC1C491139789B0024180E /* NSString+Additions.m */; };
+		03F114E01139734D00510244 /* VZHtlrUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F114DF1139734D00510244 /* VZHtlrUpload.m */; };
 		03FAC3CB105144D2007D439E /* NSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FAC3CA105144D2007D439E /* NSData+zlib.m */; };
 		03FAC3D310514573007D439E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FAC3D210514573007D439E /* libz.dylib */; };
 		03FAC3D7105145BB007D439E /* libssl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FAC3D6105145BB007D439E /* libssl.dylib */; };
@@ -56,6 +58,10 @@
 		03A646031014E43C00730E45 /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
 		03A646D01014EEF500730E45 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		03B684C410A7900000681093 /* newicon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = newicon.icns; sourceTree = "<group>"; };
+		03BC1C481139789B0024180E /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		03BC1C491139789B0024180E /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		03F114DE1139734D00510244 /* VZHtlrUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHtlrUpload.h; sourceTree = "<group>"; };
+		03F114DF1139734D00510244 /* VZHtlrUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHtlrUpload.m; sourceTree = "<group>"; };
 		03FAC3C9105144D2007D439E /* NSData+zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+zlib.h"; sourceTree = "<group>"; };
 		03FAC3CA105144D2007D439E /* NSData+zlib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+zlib.m"; sourceTree = "<group>"; };
 		03FAC3D210514573007D439E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.dylib; sourceTree = "<absolute>"; };
@@ -100,6 +106,8 @@
 				034273C910AF422F006E9FCD /* VZImageShackUpload.m */,
 				039C69DF10E38CEA0052B7E9 /* VZTwittPicUpload.h */,
 				039C69E010E38CEA0052B7E9 /* VZTwittPicUpload.m */,
+				03F114DE1139734D00510244 /* VZHtlrUpload.h */,
+				03F114DF1139734D00510244 /* VZHtlrUpload.m */,
 			);
 			name = Hosts;
 			sourceTree = "<group>";
@@ -165,6 +173,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				03BC1C481139789B0024180E /* NSString+Additions.h */,
+				03BC1C491139789B0024180E /* NSString+Additions.m */,
 				32CA4F630368D1EE00C91783 /* ImgDrop_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				03FAC3C9105144D2007D439E /* NSData+zlib.h */,
@@ -269,6 +279,8 @@
 				034273CA10AF422F006E9FCD /* VZImageShackUpload.m in Sources */,
 				039C69E110E38CEA0052B7E9 /* VZTwittPicUpload.m in Sources */,
 				039C6A1210E391460052B7E9 /* TwittPicMessageWindowController.m in Sources */,
+				03F114E01139734D00510244 /* VZHtlrUpload.m in Sources */,
+				03BC1C4A1139789B0024180E /* NSString+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
