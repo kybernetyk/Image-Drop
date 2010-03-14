@@ -28,9 +28,15 @@
 	NSLog(@"VZ UPLOAD DEALLOC!");
 	
 	[data release];
+	data = nil;
 	[filename release];
+	filename = nil;
+	
 	[urlOfUploadHost release];
+	urlOfUploadHost = nil;
+	
 	[uploadMetaInformation release];
+	uploadMetaInformation = nil;
 	
 	[super dealloc];
 }
