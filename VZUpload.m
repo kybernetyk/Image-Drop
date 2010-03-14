@@ -302,6 +302,7 @@
 	{
 		NSLog(@"post fields for %@ are nil!",[self className]);
 		[self messageDelegateFailure];
+		return nil;
 	}
 	
 	NSLog(@"%@ bulding multipart post request ...", [self className]);
@@ -360,7 +361,8 @@
 	
 	NSURLRequest *req = [self buildUploadRequestWithPostFields: [self postFields]];
 	
-	[[[NSURLConnection alloc] initWithRequest:req delegate:self] autorelease];
+	if (req)
+		[[[NSURLConnection alloc] initWithRequest:req delegate:self] autorelease];
 }
 
 
