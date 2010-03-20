@@ -23,6 +23,9 @@
 		03A646D11014EEF500730E45 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 03A646D01014EEF500730E45 /* Credits.rtf */; };
 		03B684C510A7900000681093 /* newicon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 03B684C410A7900000681093 /* newicon.icns */; };
 		03BC1C4A1139789B0024180E /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BC1C491139789B0024180E /* NSString+Additions.m */; };
+		03BFD1991154F48C004989C8 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BFD1981154F48C004989C8 /* Sparkle.framework */; };
+		03BFD1A81154F4B7004989C8 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 03BFD1981154F48C004989C8 /* Sparkle.framework */; };
+		03BFD1AF1154F4FF004989C8 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 03BFD1AE1154F4FF004989C8 /* dsa_pub.pem */; };
 		03F114E01139734D00510244 /* VZHtlrUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F114DF1139734D00510244 /* VZHtlrUpload.m */; };
 		03FAC3CB105144D2007D439E /* NSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FAC3CA105144D2007D439E /* NSData+zlib.m */; };
 		03FAC3D310514573007D439E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FAC3D210514573007D439E /* libz.dylib */; };
@@ -33,6 +36,19 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		03BFD1AD1154F4B9004989C8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				03BFD1A81154F4B7004989C8 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		034273C810AF422F006E9FCD /* VZImageShackUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZImageShackUpload.h; sourceTree = "<group>"; };
@@ -60,6 +76,8 @@
 		03B684C410A7900000681093 /* newicon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = newicon.icns; sourceTree = "<group>"; };
 		03BC1C481139789B0024180E /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		03BC1C491139789B0024180E /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		03BFD1981154F48C004989C8 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		03BFD1AE1154F4FF004989C8 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		03F114DE1139734D00510244 /* VZHtlrUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHtlrUpload.h; sourceTree = "<group>"; };
 		03F114DF1139734D00510244 /* VZHtlrUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZHtlrUpload.m; sourceTree = "<group>"; };
 		03FAC3C9105144D2007D439E /* NSData+zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+zlib.h"; sourceTree = "<group>"; };
@@ -74,9 +92,9 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32CA4F630368D1EE00C91783 /* ImgDrop_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImgDrop_Prefix.pch; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Image Drop_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Image Drop_Prefix.pch"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* ImgDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImgDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107320486CEB800E47090 /* Image Drop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Drop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +107,7 @@
 				03FAC3D7105145BB007D439E /* libssl.dylib in Frameworks */,
 				03FAC3E410514649007D439E /* libcrypto.dylib in Frameworks */,
 				039509A710515873006B9D90 /* CoreFoundation.framework in Frameworks */,
+				03BFD1991154F48C004989C8 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +150,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03BFD1981154F48C004989C8 /* Sparkle.framework */,
 				03FAC3E310514649007D439E /* libcrypto.dylib */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				03FAC3D210514573007D439E /* libz.dylib */,
@@ -153,7 +173,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* ImgDrop.app */,
+				8D1107320486CEB800E47090 /* Image Drop.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,7 +195,7 @@
 			children = (
 				03BC1C481139789B0024180E /* NSString+Additions.h */,
 				03BC1C491139789B0024180E /* NSString+Additions.m */,
-				32CA4F630368D1EE00C91783 /* ImgDrop_Prefix.pch */,
+				32CA4F630368D1EE00C91783 /* Image Drop_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				03FAC3C9105144D2007D439E /* NSData+zlib.h */,
 				03FAC3CA105144D2007D439E /* NSData+zlib.m */,
@@ -186,6 +206,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				03BFD1AE1154F4FF004989C8 /* dsa_pub.pem */,
 				03B684C410A7900000681093 /* newicon.icns */,
 				03A646D01014EEF500730E45 /* Credits.rtf */,
 				039DF14F10148B2400C9539F /* icon.icns */,
@@ -211,22 +232,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* ImgDrop */ = {
+		8D1107260486CEB800E47090 /* Image Drop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "ImgDrop" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Image Drop" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				03BFD1AD1154F4B9004989C8 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ImgDrop;
+			name = "Image Drop";
 			productInstallPath = "$(HOME)/Applications";
 			productName = ImgDrop;
-			productReference = 8D1107320486CEB800E47090 /* ImgDrop.app */;
+			productReference = 8D1107320486CEB800E47090 /* Image Drop.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -234,14 +256,14 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ImgDrop" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Image Drop" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* ImgDrop */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* ImgDrop */,
+				8D1107260486CEB800E47090 /* Image Drop */,
 			);
 		};
 /* End PBXProject section */
@@ -259,6 +281,7 @@
 				0395087C10515048006B9D90 /* UploadSummaryWindow.xib in Resources */,
 				03B684C510A7900000681093 /* newicon.icns in Resources */,
 				039C6A0E10E390980052B7E9 /* TwittPicMessageWindow.xib in Resources */,
+				03BFD1AF1154F4FF004989C8 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,15 +334,19 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ImgDrop_Prefix.pch;
+				GCC_PREFIX_HEADER = "Image Drop_Prefix.pch";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = ImgDrop;
+				PRODUCT_NAME = "Image Drop";
 			};
 			name = Debug;
 		};
@@ -328,12 +355,16 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ImgDrop_Prefix.pch;
+				GCC_PREFIX_HEADER = "Image Drop_Prefix.pch";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = ImgDrop;
+				PRODUCT_NAME = "Image Drop";
 			};
 			name = Release;
 		};
@@ -376,7 +407,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "ImgDrop" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Image Drop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -385,7 +416,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ImgDrop" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Image Drop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
