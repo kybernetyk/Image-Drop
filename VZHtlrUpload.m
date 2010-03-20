@@ -36,7 +36,10 @@
 		return;
 	}
 	
-	[self messageDelegateSuccess: [NSString stringWithFormat:@"%@", [returnValue stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]]]];
+	NSString *url = [[returnValue componentsSeparatedByCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]] objectAtIndex: 0];
+	url = [url stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+	
+	[self messageDelegateSuccess: [NSString stringWithFormat:@"%@", url]];
 	
 	/*
 	NSError *error;	
