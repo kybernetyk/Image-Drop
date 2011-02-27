@@ -100,10 +100,28 @@
 {
 	//[NSApp hide: self];
 	
-	
+    NSArray *a = [pboard readObjectsForClasses: [NSArray arrayWithObject:[NSURL class]]
+                          options:[NSDictionary dictionaryWithObject:[NSNumber
+                                                                      numberWithBool:YES] forKey: NSPasteboardURLReadingFileURLsOnlyKey]];
+
+//    NSLog(@"array: %@", a);
+    
+    NSURL *u = nil;
+    
+    if ([a count] > 0)
+       u = [a objectAtIndex: 0];//[NSURL URLFromPasteboard: pboard];
+    
+//    NSLog(@"url: %@", u);
+//    
+    NSLog(@"furl: %@",[u filePathURL]);
+    
+ 	
 	NSPasteboardItem *item = [[pboard pasteboardItems] objectAtIndex: 0];
+    NSLog(@"Item: %@", item);
+    
 	NSString *type = [[item types] objectAtIndex: 0];
-	
+	NSLog(@"types: %@", [item types]);
+    
 	//NSLog(@"items: %@",[pboard pasteboardItems]);
 	//NSLog(@"types: %@", [item types]);
 	
@@ -165,7 +183,9 @@
 	
 	if ([type isEqualToString:@"public.file-url"])
 	{
-		NSString *filename = [[[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding] autorelease];
+		NSString *filename = [[u filePathURL] absoluteString];
+        
+        /*[[[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding] autorelease];*/
 		NSString *extension = [filename pathExtension];
 		fname = [[filename pathComponents] lastObject];
 

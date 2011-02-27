@@ -26,6 +26,7 @@
 
 @property (readwrite, assign) id delegate;
 
+@property (readwrite, copy) NSString *urlOfUploadHost;
 
 
 /**
@@ -83,7 +84,6 @@
 #pragma mark -
 #pragma mark Private methods and properties
 @interface VZUpload (private)
-@property (readwrite, copy) NSString *urlOfUploadHost;
 
 - (NSURLRequest *) buildUploadRequestWithPostFields: (NSDictionary *) postFields;
 
