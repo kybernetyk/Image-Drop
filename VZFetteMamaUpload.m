@@ -24,4 +24,20 @@
 {
 	return @"http://fettemama.org:6502/";
 }
+
+-(void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response     // IN
+{
+	//LOG(6, ("%s: self:0x%p\n", __func__, self));
+	
+	NSLog(@"received response: %@",[response URL]);
+	
+	[self messageDelegateSuccess: [[response URL] absoluteString]];
+}
+
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data                // IN
+{
+	return;	
+}
+
 @end

@@ -101,14 +101,13 @@
 									<string>Kttns</string>
 									<string>imgShack</string>
 									<string>Twitt Pic</string>
-									<string>Htlr</string>
 									<string>Fettemama</string>
 								</object>
 								<reference key="NSDelegate" ref="403728926"/>
 								<object class="NSComboTableView" key="NSTableView" id="916134558">
 									<reference key="NSNextResponder"/>
 									<int key="NSvFlags">274</int>
-									<string key="NSFrameSize">{13, 84}</string>
+									<string key="NSFrameSize">{13, 105}</string>
 									<reference key="NSSuperview"/>
 									<reference key="NSWindow"/>
 									<bool key="NSEnabled">YES</bool>
@@ -271,7 +270,6 @@
 							<string key="NSFrame">{{75, 22}, {145, 22}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSSecureTextFieldCell" key="NSCell" id="999391531">
 								<int key="NSCellFlags">343014976</int>
@@ -447,11 +445,11 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="644245147"/>
-							<reference ref="403728926"/>
 							<reference ref="906844297"/>
 							<reference ref="369677144"/>
 							<reference ref="861734346"/>
 							<reference ref="743799884"/>
+							<reference ref="403728926"/>
 						</object>
 						<reference key="parent" ref="1005"/>
 					</object>
@@ -601,7 +599,6 @@
 						<string>Kttns</string>
 						<string>imgShack</string>
 						<string>Twitt Pic</string>
-						<string>Htlr</string>
 						<string>Fettemama</string>
 					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>

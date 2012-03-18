@@ -11,7 +11,6 @@
 #import "VZHtlrUpload.h"
 
 @interface VZFetteMamaUpload : VZHtlrUpload {
-
 }
 
 @end
