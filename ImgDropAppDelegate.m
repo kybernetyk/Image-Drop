@@ -14,6 +14,7 @@
 #import "VZImageShackUpload.h"
 #import "VZTwittPicUpload.h"
 #import "VZHtlrUpload.h"
+#import "VZFetteMamaUpload.h"
 
 @implementation ImgDropAppDelegate
 
@@ -356,6 +357,8 @@
 		upc = [[VZHtlrUpload alloc] init];
 	else if ([service isEqualToString:@"Twitt Pic"])
 		upc = [[VZTwittPicUpload alloc] initWithUsername: username Password: password];
+	else if ([service isEqualToString: @"Fettemama"])
+		upc = [[VZFetteMamaUpload alloc] init];
 	
 	return upc;
 }
@@ -411,13 +414,14 @@
 	//redirect to teh brauser
 	if ([[uploadInfo valueForKey: @"shouldOpenUploadedFileInBrowser"] boolValue])	
 	{
+		//		[aClient release];
 		url = [url stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
  		NSURL *_url = [NSURL URLWithString: url];
 		[[NSWorkspace sharedWorkspace] openURL: _url];
 	}
 
 
-	[aClient autorelease];
+	//[aClient autorelease];
 
 }
 

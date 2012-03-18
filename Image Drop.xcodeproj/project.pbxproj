@@ -32,6 +32,7 @@
 		03FAC3D7105145BB007D439E /* libssl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FAC3D6105145BB007D439E /* libssl.dylib */; };
 		03FAC3E410514649007D439E /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FAC3E310514649007D439E /* libcrypto.dylib */; };
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		3558E5871515D583003016A4 /* VZFetteMamaUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 3558E5861515D583003016A4 /* VZFetteMamaUpload.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -93,6 +94,8 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Image Drop_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Image Drop_Prefix.pch"; sourceTree = "<group>"; };
+		3558E5851515D583003016A4 /* VZFetteMamaUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFetteMamaUpload.h; sourceTree = "<group>"; };
+		3558E5861515D583003016A4 /* VZFetteMamaUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFetteMamaUpload.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Image Drop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Drop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -127,6 +130,8 @@
 				039C69E010E38CEA0052B7E9 /* VZTwittPicUpload.m */,
 				03F114DE1139734D00510244 /* VZHtlrUpload.h */,
 				03F114DF1139734D00510244 /* VZHtlrUpload.m */,
+				3558E5851515D583003016A4 /* VZFetteMamaUpload.h */,
+				3558E5861515D583003016A4 /* VZFetteMamaUpload.m */,
 			);
 			name = Hosts;
 			sourceTree = "<group>";
@@ -258,7 +263,11 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Image Drop" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* ImgDrop */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -304,6 +313,7 @@
 				039C6A1210E391460052B7E9 /* TwittPicMessageWindowController.m in Sources */,
 				03F114E01139734D00510244 /* VZHtlrUpload.m in Sources */,
 				03BC1C4A1139789B0024180E /* NSString+Additions.m in Sources */,
+				3558E5871515D583003016A4 /* VZFetteMamaUpload.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
